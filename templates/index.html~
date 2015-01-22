@@ -1,0 +1,11 @@
+<form action='/checklogin/' method='POST'>
+{% csrf_token %}
+{{login_form.as_p}}
+<input type='submit' name='submit'>
+</form>
+
+<form action='/checkreg/' method='POST'>
+{% csrf_token %}
+{{registration_form.as_p}}
+<input type='submit' name='submit'>
+</form>

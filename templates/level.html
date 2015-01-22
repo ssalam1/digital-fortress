@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>{{title}}</title>
+
+
+
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.css" />-->
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/ui.jqgrid.css" />
+<script src="/static/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<script src="/static/js/script.js" type="text/javascript"></script>
+
+
+</head>
+
+
+<!--
+
+
+{{source}}
+
+
+-->
+<body>
+<div class="player_name_div">
+<p class="player_name"> Hi, {{name}}!! <br/>
+<a href="/logout/" style="text-decoration:none;color:grey">logout</a></p>
+</div>
+
+<div class="central_content_container">
+	<div class="pic_container">
+<img class="query_pic" src="/static/img/{{photo}}"/>
+       
+	</div>
+    <div class="pic_descrptn">
+        <p>{{text}}</p>
+    </div>
+    <div class="form_container">
+    	<form method='post' action='/check_answer/'>
+		{% csrf_token %}
+		<input type="hidden" hidden="true" name = "level" value="{{level}}"></input>
+		<input type="text" name = "answer"></input>
+		<input class = 'btn btn-danger' type='submit' name='submit'>
+
+		</form>
+    </div>
+
+
+
+</div>
+<div class="rules_div">
+	<img src="/static/imgs/close.png" class="close_bt">
+	<div class="rules_content">
+    	<p style="color:#FFFFFF;font-size:18px">Rules</p>
+        <ul style="height:70%;overflow:auto"> 
+        <li>You will be facing several challenging levels. The answer to a level may be a single word, multi-word or digits.</li>
+            <li>Make sure that you type in all the answers in lowercase characters without any space between the words.</li>
+            <li>You will need to exploit the built-in programming language libraries in order to find the answers to some of the questions.</li>
+            <li>Try to correlate the hints provided in the title, slug, image and the page source to find your way to the answer.</li>
+            <li>Stay in touch with our official <a href="https://www.facebook.com/DigitalFortress.Mukti">hint page</a> which may help you in case you get stuck on any of the levels. </li>
+          
+	
+           
+       </ul>
+    </div>
+</div>
+
+
+<div class="nav">
+<img src="/static/imgs/logo.png" style="width:10%;float:left;margin-left:2%">
+	<p class="crossedplayerinfo" style="width:60%;float:left;">No. of players who have crossed this level: {{pass_count}}</p>
+    <div class="button"><p style="font-size:18px;margin-top:10px">Rules</p></div>
+</div>
+
+</body>
+
+
+<script>
+{{js}}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47489453-1']);
+  _gaq.push(['_setDomainName', 'mkti.in']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

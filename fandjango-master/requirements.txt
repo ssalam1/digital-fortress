@@ -1,0 +1,8 @@
+django==1.5.2
+nose
+sphinx
+facepy
+south
+python-dateutil
+django-jsonfield
+mock

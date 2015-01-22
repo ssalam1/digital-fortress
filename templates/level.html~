@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>{{title}}</title>
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/ui.jqgrid.css" />
+<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+
+
+</head>
+
+
+<!--
+
+
+{{source}}
+
+
+-->
+<body>
+
+<p> Hi, {{name}}!! </p>
+
+<div class="span6 offset3">
+<img src="/static/img/{{photo}}"/>
+<p>{{text}}</p>
+
+<form method='post' action='/check_answer/'>
+		{% csrf_token %}
+<input type="hidden" hidden="true" name = "level" value="{{level}}"></input>
+<input type="text" name = "answer"></input>
+<input class = 'btn btn-danger' type='submit' name='submit'>
+
+</form>
+
+</div>
+
+<p>No. of players who have crossed this level: {{pass_count}}</p>
+</body>
+
+
+<script>
+{{js}}
+</script>
